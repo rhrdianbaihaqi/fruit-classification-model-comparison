@@ -2,6 +2,14 @@
 
 Proyek ini membandingkan tiga model klasifikasi machine learning untuk mengidentifikasi buah **Orange** vs **Grapefruit** berdasarkan fitur fisik dan warna.
 
+## Author
+| | |
+|---|---|
+| *Nama* | Muhammad Rahardian Baihaqi |
+| *NIM* | 1237050023 |
+| *Mata Kuliah* | Machine Learning |
+| *Tugas* | Ujian Tengah Semester (UTS) |
+
 ## 📝 Deskripsi
 
 Dataset `citrus.csv` berisi 10.000 data buah (5.000 orange, 5.000 grapefruit) dengan fitur:
