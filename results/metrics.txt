@@ -5,60 +5,60 @@ HASIL EVALUASI MODEL KLASIFIKASI BUAH
 ────────────────────────────────────────
 Model: Decision Tree
 ────────────────────────────────────────
-Accuracy: 0.9440 (94.40%)
+Accuracy: 0.9390 (93.90%)
 
 Classification Report:
               precision    recall  f1-score   support
 
-      Orange       0.95      0.94      0.94      1012
-  Grapefruit       0.94      0.95      0.94       988
+      Orange       0.94      0.94      0.94      1000
+  Grapefruit       0.94      0.94      0.94      1000
 
     accuracy                           0.94      2000
    macro avg       0.94      0.94      0.94      2000
 weighted avg       0.94      0.94      0.94      2000
 
 Confusion Matrix:
-[[951  61]
- [ 51 937]]
+[[943  57]
+ [ 65 935]]
 
 
 ────────────────────────────────────────
 Model: Naive Bayes
 ────────────────────────────────────────
-Accuracy: 0.9200 (92.00%)
+Accuracy: 0.9225 (92.25%)
 
 Classification Report:
               precision    recall  f1-score   support
 
-      Orange       0.93      0.91      0.92      1012
-  Grapefruit       0.91      0.93      0.92       988
+      Orange       0.93      0.92      0.92      1000
+  Grapefruit       0.92      0.93      0.92      1000
 
     accuracy                           0.92      2000
    macro avg       0.92      0.92      0.92      2000
 weighted avg       0.92      0.92      0.92      2000
 
 Confusion Matrix:
-[[921  91]
- [ 69 919]]
+[[918  82]
+ [ 73 927]]
 
 
 ────────────────────────────────────────
 Model: SVM
 ────────────────────────────────────────
-Accuracy: 0.9370 (93.70%)
+Accuracy: 0.9375 (93.75%)
 
 Classification Report:
               precision    recall  f1-score   support
 
-      Orange       0.95      0.92      0.94      1012
-  Grapefruit       0.93      0.95      0.94       988
+      Orange       0.94      0.93      0.94      1000
+  Grapefruit       0.93      0.94      0.94      1000
 
     accuracy                           0.94      2000
    macro avg       0.94      0.94      0.94      2000
 weighted avg       0.94      0.94      0.94      2000
 
 Confusion Matrix:
-[[936  76]
- [ 50 938]]
+[[931  69]
+ [ 56 944]]
 
 

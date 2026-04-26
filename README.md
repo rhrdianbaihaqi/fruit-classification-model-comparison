@@ -2,6 +2,17 @@
 
 Proyek ini membandingkan tiga model klasifikasi machine learning untuk mengidentifikasi buah **Orange** vs **Grapefruit** berdasarkan fitur fisik dan warna.
 
+## 👤 Penulis
+
+| | |
+|---|---|
+| **Nama** | Muhammad Rahardian Baihaqi |
+| **NIM** | 1237050023 |
+| **Mata Kuliah** | Machine Learning |
+| **Tugas** | Ujian Tengah Semester (UTS) |
+
+---
+
 ## 📝 Deskripsi
 
 Dataset `citrus.csv` berisi 10.000 data buah (5.000 orange, 5.000 grapefruit) dengan fitur:
@@ -42,11 +53,16 @@ y = df["name"].map({"orange": 0, "grapefruit": 1})  # Encode label
 #### b. Train-Test Split
 
 ```python
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-# Training: 8.000 samples | Testing: 2.000 samples
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+# Training: 8.000 samples (4.000 orange + 4.000 grapefruit)
+# Testing:  2.000 samples (1.000 orange + 1.000 grapefruit)
 ```
 
-Menggunakan rasio **80:20** dengan `random_state=42` untuk reproducibility.
+Menggunakan rasio **80:20** dengan:
+- `random_state=42` → menjamin **reproducibility** (hasil konsisten setiap dijalankan)
+- `stratify=y` → menjamin **distribusi label proporsional** (50:50) di train dan test set
 
 #### c. Feature Scaling (StandardScaler)
 
@@ -137,17 +153,17 @@ Visualisasi perbandingan performa model:
 
 | Model | Accuracy | Precision | Recall | F1-Score |
 |-------|----------|-----------|--------|----------|
-| **Decision Tree** | **94.40%** 🏆 | 0.94 | 0.94 | 0.94 |
-| SVM | 93.70% | 0.94 | 0.94 | 0.94 |
-| Naive Bayes | 92.00% | 0.92 | 0.92 | 0.92 |
+| **Decision Tree** | **93.90%** 🏆 | 0.94 | 0.94 | 0.94 |
+| SVM | 93.75% | 0.94 | 0.94 | 0.94 |
+| Naive Bayes | 92.25% | 0.92 | 0.92 | 0.92 |
 
 ### Confusion Matrix
 
 | Model | TP (Orange benar) | FP | FN | TN (Grapefruit benar) |
 |-------|---|---|---|---|
-| Decision Tree | 951 | 61 | 51 | 937 |
-| Naive Bayes | 921 | 91 | 69 | 919 |
-| SVM | 936 | 76 | 50 | 938 |
+| Decision Tree | 943 | 57 | 65 | 935 |
+| Naive Bayes | 918 | 82 | 73 | 927 |
+| SVM | 931 | 69 | 56 | 944 |
 
 ### Visualisasi Output
 
@@ -168,15 +184,15 @@ Semua visualisasi tersimpan di folder `results/`:
 
 ## 🏁 Kesimpulan
 
-1. **Decision Tree** menghasilkan akurasi tertinggi (**94.40%**), unggul dalam kemampuan menangkap pola non-linear pada data buah.
+1. **Decision Tree** menghasilkan akurasi tertinggi (**93.90%**), unggul dalam kemampuan menangkap pola non-linear pada data buah.
 
-2. **SVM** menempati posisi kedua (**93.70%**) dengan keunggulan pada recall kelas grapefruit (938 benar vs 937 Decision Tree), menunjukkan SVM lebih sedikit salah mengklasifikasikan grapefruit.
+2. **SVM** menempati posisi kedua (**93.75%**) dengan keunggulan pada recall kelas grapefruit (944 benar vs 935 Decision Tree), menunjukkan SVM lebih sedikit salah mengklasifikasikan grapefruit.
 
-3. **Naive Bayes** memiliki akurasi terendah (**92.00%**) karena asumsi independensi antar fitur tidak sepenuhnya terpenuhi — beberapa fitur (diameter & weight) memiliki korelasi.
+3. **Naive Bayes** memiliki akurasi terendah (**92.25%**) karena asumsi independensi antar fitur tidak sepenuhnya terpenuhi — beberapa fitur (diameter & weight) memiliki korelasi.
 
 4. **Feature terpenting** berdasarkan Decision Tree: `diameter` dan `weight` merupakan pembeda utama antara orange dan grapefruit (grapefruit umumnya lebih besar dan berat).
 
-5. Secara keseluruhan, **ketiga model memiliki performa yang baik (>92%)** berkat dataset yang seimbang dan fitur yang cukup diskriminatif.
+5. Secara keseluruhan, **ketiga model memiliki performa yang baik (>92%)** berkat dataset yang seimbang dan penggunaan **stratified sampling** yang menjamin distribusi label proporsional pada train/test set.
 
 ---
 
