@@ -1,0 +1,64 @@
+============================================================
+HASIL EVALUASI MODEL KLASIFIKASI BUAH
+============================================================
+
+────────────────────────────────────────
+Model: Decision Tree
+────────────────────────────────────────
+Accuracy: 0.9440 (94.40%)
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Orange       0.95      0.94      0.94      1012
+  Grapefruit       0.94      0.95      0.94       988
+
+    accuracy                           0.94      2000
+   macro avg       0.94      0.94      0.94      2000
+weighted avg       0.94      0.94      0.94      2000
+
+Confusion Matrix:
+[[951  61]
+ [ 51 937]]
+
+
+────────────────────────────────────────
+Model: Naive Bayes
+────────────────────────────────────────
+Accuracy: 0.9200 (92.00%)
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Orange       0.93      0.91      0.92      1012
+  Grapefruit       0.91      0.93      0.92       988
+
+    accuracy                           0.92      2000
+   macro avg       0.92      0.92      0.92      2000
+weighted avg       0.92      0.92      0.92      2000
+
+Confusion Matrix:
+[[921  91]
+ [ 69 919]]
+
+
+────────────────────────────────────────
+Model: SVM
+────────────────────────────────────────
+Accuracy: 0.9370 (93.70%)
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Orange       0.95      0.92      0.94      1012
+  Grapefruit       0.93      0.95      0.94       988
+
+    accuracy                           0.94      2000
+   macro avg       0.94      0.94      0.94      2000
+weighted avg       0.94      0.94      0.94      2000
+
+Confusion Matrix:
+[[936  76]
+ [ 50 938]]
+
+
